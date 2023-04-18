@@ -1,9 +1,59 @@
+body {
+    background-color: #45403b;
+}
+
+
+h1{
+    background-color: #151e1e;
+    color: #FF0000;
+    text-align:center;
+    padding: 5px;
+}
+
+h3 {
+    background-color: #e6e6e6;
+    color: #FF0000;
+    text-align:center;
+}
+
+
+p{
+    background-color: #8c8c8c;
+}
+
+
+img {
+    width:85%;
+    height:auto;
+}
+
+img:hover {
+   width:80%;
+   height:auto;
+}
+
+
+a:hover{
+    text-decoration:underline;
+}
+
+
+
+
 table {
     width: 100%;
     height: 40%;
     table-layout: fixed;
-    background-color: #45403b;
 }
+
+.giFormat{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: larger;
+    text-decoration:none;
+    border: none;
+}
+
 
 .aboutMe{
     width: 62%;
@@ -27,69 +77,9 @@ table {
     color:#000000;
     text-decoration:none;
 }
+
 span{
     color:#000000;
-}
-
-.tableTitle {
-    width: 33%;
-    height: 5%;
-    color: #FF0000;
-    text-align: center;
-    border-color: #151e1e;
-    font-size: x-large;
-    background-color: #151e1e;
-}
-
-body {
-    background-color: #45403b;
-}
-h1{
-    background-color: #151e1e;
-    color: #FF0000;
-    text-align:center;
-    padding: 5px;
-}
-
-h3 {
-    background-color: #e6e6e6;
-    color: #FF0000;
-    text-align:center;
-}
-
-p{
-    background-color: #8c8c8c;
-}
-
-img {
-    width:85%;
-    height:auto;
-}
-
-img:hover {
-   width:80%;
-   height:auto;
-}
-
-.gameImageCol {
-    width: 33%;
-    height: auto;
-}
-
-.giFormat{
-    text-align: center;
-    color: #FFFFFF;
-    font-size: larger;
-    text-decoration:none;
-    border: none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-
-#selectableGameIcon{
-    width:75%;
 }
 
 .row::after {
