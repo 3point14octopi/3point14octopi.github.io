@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/subpageStyle.css">
+        <title>
+            J. Flynn Portfolio/Season's Greetings
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Season's Greetings (2021)
+        </h1>
+        <iframe frameborder="0" src="https://itch.io/embed/972472?bg_color=222222&amp;fg_color=eeeeee&amp;border_color=363636" width="208" height="167">
+            <a href="https://catalinae.itch.io/seasons-greetings">
+                Season's Greetings by Catalinae, quatchi, 3Point14OctoPi, TheConfusedOne1, JAFBO
+            </a>
+        </iframe>
+        <h3>
+            Season's Greetings is a top-down shooter created in a provided 2D C++ framework. Development lasted about four months, and was done in a team of 4.
+        </h3>
+        <p>
+            In <i>Season's Greetings</i>, players control a winter fairy that must defeat autumn-themed enemies using her magical snowballs. <br>
+            For this project, I primarily worked on the dungeon generation system. I developed several other backend systems as well, including an object pooling-like solution
+            to ensure we could run the game efficiently, a "swappable" enemy class, and a basic animation class.
+        </p>
+        <h3>
+            Dungeon Generation
+        </h3>
+        <p>
+            For each level of the game, a map with a certain number of rooms based on the level number would be generated (7-8 for level 1, 9-10 for level 2, 11-12 for level 3).
+            The game would then generate individual maps for each room, using one of three randomly selected methods:<br>
+            <b>"Tunnel" method</b><br>
+            This would fill the room with walls or spikes, and then "tunnel" around and connect each entrance to at least one other. This creates a maze-like room with narrow corridors for fighting enemies.<br>
+            <b>"Builder" method</b><br>
+            This would place lines of walls or spikes in the room, leaving certain areas accessible (entrances). This creates a more open room, with walls to duck behind (or spikes to avoid rushing over).<br>
+            <b>"Shape" method</b><br>
+            This would place walls and spikes in a randomly selected predefined arrangement. These rooms would have a particular design and would fall somewhere between the above room types. <br><br>
+
+            Early on in development, we wrote text files containing layouts for dungeons (the level) and individual room maps. We would randomly select the order in which the room maps would be placed in the dungeon.
+            In the final version of the game, this method is exclusively used to load the tutorial dungeon and its rooms. <br><br>
+
+            A system to distribute enemies throughout the dungeon was also implemented. There would be between 2-6 enemies per room, and weighting was used to ensure that a room would not be 
+            filled with 6 of the most difficult enemy to deal with. There was also a system set in place where the enemies would be spawned on the wall opposite of the side from which the player entered a room.
+        </p>
+        <h3>
+            Object Pooling
+        </h3>
+        <p>
+            The framework our group was provided with to make the game did not run very well if there were large amounts of entities active at once, and behaved oddly when creating and deleting physics objects during runtime. 
+            To prevent our game from running at a painfully slow speed, the maximum number of game objects that would be needed on-screen at once were created on startup, and then continuously passed between an active and inactive list. 
+            This allowed us to constantly recycle walls, spikes, bullets, and enemies, without taking performance hits. <br>
+            I referred to it at the time as "Juggling", but would later learn that I had achieved a rudimentary implementation of the <a href="https://gameprogrammingpatterns.com/object-pool.html">Object Pooling Pattern</a>. 
+        </p>
+        <h3>
+            Swappable Enemies
+        </h3>
+        <p>
+            To work with the above system, enemies were designed to be as "reset-able" as possible. When a new enemy was pulled from the inactive pool, it would be fed flag/numerical values, and animation sprites, and would proceed to run with the same update loop regardless of initialization values. 
+        </p>
+    </body>
+</html>

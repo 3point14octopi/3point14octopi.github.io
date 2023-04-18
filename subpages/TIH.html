@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/subpageStyle.css">
+        <title>
+            J. Flynn Portfolio/The Idle Hand
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            The Idle Hand (2022)
+        </h1>
+        <iframe frameborder="0" src="https://itch.io/embed/1307813?dark=true" width="208" height="167">
+            <a href="https://3point14octopi.itch.io/the-idle-hand">
+                The Idle Hand by 3Point14OctoPi, Catalinae, quatchi, TheConfusedOne1, HarrisonL, JAFBO
+            </a>
+        </iframe>
+        
+        <h3>
+            The Idle Hand is an isometric puzzle game created in a custom 3D C++ engine. Development lasted about eight months and was done with a team of 5.
+        </h3>
+        <p>
+            In <i>The Idle Hand</i>, players control a floating hand sent by Satan to wreck havoc on an unsuspecting household.<br>
+            For this project, I primarily developed several underlying systems, most noteably an interpolation system, an interaction system, and an animation system. 
+        </p>
+        
+        <h3>
+            Interpolation System
+        </h3>
+        <p>
+            The interpolation system was responsible for the locomotion within our game. It allowed the user to define a list of "keyframe" transformations, and the system would smoothly interpolate through each one. 
+            Position, Rotation, and Scale could be adjusted with this system, and speed could be independantly set for all three. 
+            A series of transformations (an "animation") could be set to happen just once, or continuously loop. 
+            Animations were written in a text file with a simple syntax, and saved to a folder within the game. When the interpolation behaviour was added to an object, the user would specify which script to use, and set it to be active or inactive. 
+        </p>
+        
+        <h3>
+            Interaction System
+        </h3>
+        <p>
+            The interaction system was very important for our game, as it was responsible for delivering feedback when the player interacted with objects in the house. When the player interacted with a valid object, several things would happen:<br> 
+            -the player would gain a new skin for their hand <br>
+            -a screen displaying a picture of what the hand was doing would appear<br> 
+            -a sound would play<br>
+            Several feedback actions would also occur. These feedback actions could include:<br>
+            -an object's <b>transformation</b> changing<br>
+            -an object's <b>texture</b> changing<br>
+            -an object's <b>mesh</b> changing<br>
+            -an object's <b>animation</b> changing or stopping<br>
+            -an object's <b>locomotion behaviour</b> changing<br>
+            There was no limit to how many of these could be performed upon any given interaction, and any object in the game could be affected by these actions. Since it would be unreasonable to hardcode each individual interaction, a system 
+            was devised where objects would receive an "interactable" behaviour, and would pass in one or more "feedback" type objects. Feedback objects had overloads to account for the above actions, and allowed for easy setup on the objects 
+            to be interacted with. Upon being triggered by the player, the interaction behaviour would perform each of the various feedbacks provided.
+        </p>
+        
+        <h3>
+            Animation System
+        </h3>
+        <p>
+            Our group was provided with an OBJ renderer, and some VAO + VBO boiler plate code. To implement animation, I needed to go to the root of the VAO + VBO system and add a custom option for morph animation. I also needed to write a morph 
+            shader, and a custom behaviour that would update the meshes that needed to be interpolated between on a user-designated time interval. 
+        </p>
+    </body>
+</html>
