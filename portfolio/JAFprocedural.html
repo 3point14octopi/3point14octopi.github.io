@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<link  rel="stylesheet" href="../stylesheets/subpageStyle.css">
+		<title>
+			J. Flynn Portfolio - JAFprocedural
+		</title>
+	</head>
+
+	<body>
+		<h1>
+			JAFprocedural (Ongoing Development)
+		</h1>
+
+		<h3>
+			JAFprocedural is a system designed to create 2D procedurally generated maps or layouts, which can be used in a variety of ways.
+		</h3>
+		<p>
+			JAFprocedural is not a game, but rather a tool for development. I began working on it in the summer of 2022 after reading my old code from Season's Greetings and saying to myself "There has GOT to be a better way of doing all of this."
+			The project ended up expanding far beyond that, and has evolved from "Season's Greetings room generation but more efficient" to "Dungeon Generator" to "Possibly a future Unity package". 
+		</p>
+
+		<h3>
+			Current Features
+		</h3>
+		<p>
+			-Stores maps in a custom object that uses a simple coordinate based access system<br>
+			-Maps are divided into cells, which can be expanded to store more information<br>
+			-Map sizes are defined by the user and the dimensions can be edited after generation<br>
+			-Can generate maps from a user-defined seed, or completely randomly<br>
+			-Uses combinations of several generation logic functions<br>
+			-Can write a "generation script" in which the user decides which logic functions to use to generate maps with custom layout rules
+		</p>
+
+		<h3>
+			Battle For the Arena-Exclusive Features
+		</h3>
+		<p>
+			Some developer functionality was created during early development of Battle For the Arena. This includes:<br>
+			-Map Saving/Loading system <br>
+			-Ability to regenerate arena, and undo/redo generation actions <br>
+			-Ability to toggle between different generation styles (Western vs Default) during runtime <br>
+			These would all be excellent features to include in the main project, possibly in an editor mode. 
+		</p>
+
+		<h3>
+			Future Plans
+		</h3>
+		<p>
+			I think one of the current shortfalls of the system is that it greatly improves upon (and has some fairly decent new) generation 
+			"rules" from Season's Greetings, but it falls short on implementing actual procedural algorithms. I would like to add some sort of noise algorithm to the 
+			generation functionality, and think that adding Wave Function Collapse support would be interesting to implement and would work well in the spirit of the system. <br>
+			I would also like to convert my C++ project into a DLL, so that I can combine the power of my C++ files with Unity's accessibility and UI implementation capabilities. 
+			The Unity inspector would be a natural fit for controlling map generation, and converting the end result of this system into a Unity package would make it much more accessible and user-friendly.
+	</body>
+</html>
